@@ -1,0 +1,5 @@
+#Ignore NPM downloads
+node_modules/
+
+#Ignore build
+build/
