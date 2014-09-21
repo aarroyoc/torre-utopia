@@ -222,5 +222,5 @@ module.exports=function(grunt){
 	grunt.registerTask("clean",["clean"]);
 	grunt.registerTask("validation",["default","pagespeed","html-validation","css-validation"]);
 	grunt.registerTask("package",["default","htmlmin","imagemin","nodewebkit","debian_package"]);
-	grunt.registerTask("test",["validation","docs"]);
+	grunt.registerTask("test",["default","validation","docs"]);
 }
