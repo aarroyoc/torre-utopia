@@ -35,17 +35,17 @@ module.exports=function(grunt){
 					banner: "<%= pkg.name %>"
 				},
 				files: {
-					"build/css/" : ["less/*.less"]
+					"build/css/main.css" : ["less/main.less"]
 				}
 			}
 		},
 		copy: {
 			dist: {
 				files: [
-					{expand: true, src: "build/js/index.min.js", dest: "build/dist/"},
-					{expand: true, src: "build/css/*.css", dest: "build/dist/css/"},
-					{expand: true, src: "build/fonts/*", dest: "build/dist/fonts"},
-					{expand: true, src: "build/html/*.html", dest: "build/dist/"}
+					{expand: true, cwd: "build/js", src: "*.js", dest: "build/dist/"},
+					{expand: true, cwd: "build/css", src: "*.css", dest: "build/dist/css/"},
+					{expand: true, cwd: "build/fonts", src: "*", dest: "build/dist/fonts"},
+					{expand: true, cwd: "build/html", src: "*.html", dest: "build/dist/"}
 				]
 			}
 		},
@@ -103,7 +103,8 @@ module.exports=function(grunt){
 					300, 400, 700, 900
 					],
 					cssDestination: "build/css",
-					fontDestination: "build/fonts"
+					fontDestination: "build/fonts",
+					uri: "http://fonts.googleapis.com/css?family="
 				}
 			}
 		},
@@ -193,6 +194,44 @@ module.exports=function(grunt){
 					dest: "/usr/share/man/man6/"
 				}
 			]
+		},
+		favicons: {
+			options: {
+				windowsTile: true,
+				coast: true,
+				tileColor: "auto",
+				trueColor: true,
+				precomposed: true,
+				appleTouchBackgroundColor: "#0080ff",
+				tileBlackWhite: false,
+				androidHomescreen: true,
+				firefoxRound: true,
+				firefox: true,
+				appleTouchPadding: 0
+			},
+			icons: {
+				src: "logo.svg",
+				dest: "build/icons/"
+			}
+		},
+		cssmin: {
+			minify: {
+				expand: true,
+				cwd: "build/css",
+				src: ["*.css","!*.css"],
+				dest: "build/dist/css",
+				ext: ".min.css"
+			}
+		},
+		compress: {
+			firefoxos: {
+				options: {
+					archive: "<%= pkg.name %>-fxos.zip"
+				},
+				files: [
+				{src: "build/dist/**", dest: ""}
+				]
+			}
 		}
 	});
 	
@@ -214,13 +253,16 @@ module.exports=function(grunt){
 	grunt.loadNpmTasks("grunt-markedman");
 	grunt.loadNpmTasks('grunt-node-webkit-builder');
 	grunt.loadNpmTasks('grunt-debian-package');
+	grunt.loadNpmTasks("grunt-favicons");
+	grunt.loadNpmTasks("grunt-contrib-cssmin");
+	grunt.loadNpmTasks("grunt-contrib-compress");
+	grunt.loadNpmTasks("grunt-typedoc");
 	
-	grunt.registerTask("default",["clean","tsd","local-googlefont:Ubuntu","typescript","browserify","jade","less","copy"]);
+	grunt.registerTask("default",["clean","tsd",/*"local-googlefont:Ubuntu",*/"typescript","browserify","jade","less","copy"]);
 	grunt.registerTask("serve",["default","connect"]);
 	grunt.registerTask("docs",["typedoc","markedman"]);
-	grunt.registerTask("publish",["default","htmlmin","imagemin","release-it","gh-pages"]);
-	grunt.registerTask("clean",["clean"]);
-	grunt.registerTask("validation",["default","pagespeed","html-validation","css-validation"]);
-	grunt.registerTask("package",["default","htmlmin","imagemin","nodewebkit","debian_package"]);
+	grunt.registerTask("publish",["default","favicons","htmlmin","imagemin","cssmin","release-it","gh-pages"]);
+	grunt.registerTask("validation",["default","html-validation","css-validation"]);
+	grunt.registerTask("package",["default","favicons","htmlmin","imagemin","cssmin","nodewebkit","debian_package","compress:firefoxos"]);
 	grunt.registerTask("test",["default","validation","docs"]);
 }

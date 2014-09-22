@@ -2,16 +2,16 @@
   "name": "generator-adrianarroyo-gamejam",
   "version": "0.1.0",
   "description": "My personal generator for my TypeScript games",
-  "homepage" : "http://adrianarroyocalle.github.io",
-  "bugs" : {
-	"url" : "http://github.com/AdrianArroyoCalle/skeleton-npm-game",
-	"email" : "adrian.arroyocalle@gmail.com"
+  "homepage": "http://adrianarroyocalle.github.io",
+  "bugs": {
+    "url": "http://github.com/AdrianArroyoCalle/skeleton-npm-game",
+    "email": "adrian.arroyocalle@gmail.com"
   },
-  "license" : "MIT",
-  "author" : {
-	"name" : "Adrián Arroyo Calle",
-	"email" : "adrian.arroyocalle@gmail.com",
-	"url" : "http://adrianarroyocalle.github.io"
+  "license": "MIT",
+  "author": {
+    "name": "Adrián Arroyo Calle",
+    "email": "adrian.arroyocalle@gmail.com",
+    "url": "http://adrianarroyocalle.github.io"
   },
   "keywords": [
     "yeoman-generator",
@@ -54,6 +54,9 @@
     "grunt-node-webkit-builder": "~0.2.3",
     "grunt-contrib-imagemin": "~0.8.1",
     "grunt-contrib-connect": "~0.8.0",
-    "grunt-w3c-validation": "~0.1.16"
+    "grunt-w3c-validation": "~0.1.16",
+    "grunt-favicons": "~0.6.4",
+    "grunt-contrib-cssmin": "~0.10.0",
+    "grunt-contrib-compress": "~0.11.0"
   }
 }
