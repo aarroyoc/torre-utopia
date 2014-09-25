@@ -31,7 +31,8 @@
     "box2d.js": "~1.0.0",
     "three": "~0.68.0",
     "mespeak": "~1.9.6",
-    "bongo.js": "~1.1.2"
+    "bongo.js": "~1.1.2",
+    "cannon": "~0.6.0"
   },
   "devDependencies": {
     "grunt-contrib-clean": "~0.6.0",

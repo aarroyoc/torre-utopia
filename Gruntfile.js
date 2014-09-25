@@ -45,7 +45,8 @@ module.exports=function(grunt){
 					{expand: true, cwd: "build/js", src: "*.js", dest: "build/dist/"},
 					{expand: true, cwd: "build/css", src: "*.css", dest: "build/dist/css/"},
 					{expand: true, cwd: "build/fonts", src: "*", dest: "build/dist/fonts"},
-					{expand: true, cwd: "build/html", src: "*.html", dest: "build/dist/"}
+					{expand: true, cwd: "build/html", src: "*.html", dest: "build/dist/"},
+					{expand: false, cwd: "", src: "node-webkit.json", dest: "build/dist/package.json"}
 				]
 			}
 		},
@@ -259,10 +260,10 @@ module.exports=function(grunt){
 	grunt.loadNpmTasks("grunt-typedoc");
 	
 	grunt.registerTask("default",["clean","tsd",/*"local-googlefont:Ubuntu",*/"typescript","browserify","jade","less","copy"]);
-	grunt.registerTask("serve",["default","connect"]);
+	grunt.registerTask("serve",["default","connect:server:keepalive"]);
 	grunt.registerTask("docs",["typedoc","markedman"]);
 	grunt.registerTask("publish",["default","favicons","htmlmin","imagemin","cssmin","release-it","gh-pages"]);
-	grunt.registerTask("validation",["default","html-validation","css-validation"]);
+	grunt.registerTask("validation",["default","html-validation",/*"css-validation"*/]);
 	grunt.registerTask("package",["default","favicons","htmlmin","imagemin","cssmin","nodewebkit","debian_package","compress:firefoxos"]);
 	grunt.registerTask("test",["default","validation","docs"]);
 }
