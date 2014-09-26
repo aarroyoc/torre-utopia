@@ -267,6 +267,6 @@ module.exports=function(grunt){
 	grunt.registerTask("docs",["typedoc","markedman"]);
 	grunt.registerTask("publish",["default","favicons","htmlmin","imagemin","cssmin","release-it","gh-pages"]);
 	grunt.registerTask("validation",["default","html-validation",/*"css-validation"*/]);
-	grunt.registerTask("package",["default","favicons","htmlmin","imagemin","cssmin"/*,"nodewebkit"*/,"debian_package","compress:firefoxos"]);
+	grunt.registerTask("package",["default","favicons","htmlmin","imagemin","cssmin","nodewebkit","debian_package","compress:firefoxos"]);
 	grunt.registerTask("test",["default","validation","docs"]);
 }
