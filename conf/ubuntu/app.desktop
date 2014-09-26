@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Skeleton NPM game
+Comment=WebApp for Ubuntu
+Type=Application
+Icon=logo.svg
+Exec=ubuntu-html5-app-launcher $@ --www=dist
+Terminal=false
+X-Ubuntu-Touch=true
+X-Ubuntu-StageHint=SideStage

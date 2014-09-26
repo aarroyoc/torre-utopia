@@ -1,0 +1,14 @@
+{
+    "description": "Skeleton NPM game",
+    "framework": "ubuntu-sdk-14.04-html",
+    "hooks": {
+        "skeleton-npm-game": {
+			"apparmor": "app.json",
+			"desktop": "app.desktop"
+		}
+    },
+    "maintainer": "Adrián Arroyo Calle",
+    "name": "com.ubuntu.developer.adrian-arroyocalle.skeleton-npm-game",
+    "title": "Skeleton NPM game",
+    "version": "0.1"
+}
