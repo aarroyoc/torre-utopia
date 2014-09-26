@@ -1,0 +1,16 @@
+{
+	"name" : "Skeleton NPM game",
+	"description" : "WebApp for Chrome and ChromeOS",
+	"version" : "0.1",
+	"manifest_version" : 2,
+	"app" : {
+		"background" : {
+			"scripts" : ["background.js"]
+		}
+	},
+	"icons": {
+		"16" : "icons/firefox-icon-16x16.png",
+		"128" : "icons/firefox-icon-128x128.png"
+	},
+	"offline_enabled" : true
+}

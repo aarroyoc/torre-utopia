@@ -46,7 +46,10 @@ module.exports=function(grunt){
 					{expand: true, cwd: "build/css", src: "*.css", dest: "build/dist/css/"},
 					{expand: true, cwd: "build/fonts", src: "*", dest: "build/dist/fonts"},
 					{expand: true, cwd: "build/html", src: "*.html", dest: "build/dist/"},
-					{expand: false, cwd: "", src: "node-webkit.json", dest: "build/dist/package.json"}
+					{expand: false, src: "conf/node-webkit.json", dest: "build/dist/package.json"},
+					{expand: false, src: "conf/chrome-manifest.json", dest: "build/dist/manifest.json"},
+					{expand: false, src: "conf/chrome-background.js", dest: "build/dist/background.js"},
+					{expand: true, cwd: "conf", src: "manifest.webapp", dest: "build/dist/"}
 				]
 			}
 		},
@@ -212,7 +215,7 @@ module.exports=function(grunt){
 			},
 			icons: {
 				src: "logo.svg",
-				dest: "build/icons/"
+				dest: "build/dist/icons/"
 			}
 		},
 		cssmin: {
@@ -230,7 +233,7 @@ module.exports=function(grunt){
 					archive: "<%= pkg.name %>-fxos.zip"
 				},
 				files: [
-				{src: "build/dist/**", dest: ""}
+				{ expand: true, cwd: "build/dist/", src: "**", dest: ""}
 				]
 			}
 		}
@@ -264,6 +267,6 @@ module.exports=function(grunt){
 	grunt.registerTask("docs",["typedoc","markedman"]);
 	grunt.registerTask("publish",["default","favicons","htmlmin","imagemin","cssmin","release-it","gh-pages"]);
 	grunt.registerTask("validation",["default","html-validation",/*"css-validation"*/]);
-	grunt.registerTask("package",["default","favicons","htmlmin","imagemin","cssmin","nodewebkit","debian_package","compress:firefoxos"]);
+	grunt.registerTask("package",["default","favicons","htmlmin","imagemin","cssmin"/*,"nodewebkit"*/,"debian_package","compress:firefoxos"]);
 	grunt.registerTask("test",["default","validation","docs"]);
 }

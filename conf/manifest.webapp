@@ -1,0 +1,30 @@
+{
+	"name" : "Skeleton NPM game",
+	"description" : "WebApp Manifest for Firefox OS",
+	"launch_path" : "/index.html",
+	"icons" : {
+		"128" : "/icons/firefox-icon-128x128.png",
+		"120" : "/icons/firefox-icon-120x120.png",
+		"90" : "/icons/firefox-icon-90x90.png",
+		"64" : "/icons/firefox-icon-64x64.png",
+		"60" : "/icons/firefox-icon-60x60.png",
+		"32" : "/icons/firefox-icon-32x32.png",
+		"30" : "/icons/firefox-icon-30x30.png",
+		"256" : "/icons/firefox-icon-256x256.png",
+		"16" : "/icons/firefox-icon-16x16.png"
+	},
+	"developer" : {
+		"name" : "Adrián Arroyo Calle",
+		"url" : "http://adrianarroyocalle.github.io"
+	},
+	"default_locale" : "en",
+	"type" : "web",
+	"fullscreen" : true,
+	"locales" : {
+		"es" : {
+			"description" : "Manifiesto WebApp para Firefox OS"
+		}
+	},
+	"orientation" : ["landscape"],
+	"version" : "0.1.0"
+}
