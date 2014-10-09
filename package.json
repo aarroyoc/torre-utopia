@@ -32,7 +32,10 @@
     "three": "~0.68.0",
     "mespeak": "~1.9.6",
     "bongo.js": "~1.1.2",
-    "cannon": "~0.6.0"
+    "cannon": "~0.6.0",
+    "hammerjs": "~2.0.4",
+    "i18next-client": "~1.7.4",
+    "canvace": "~0.9.16"
   },
   "devDependencies": {
     "grunt-contrib-clean": "~0.6.0",

@@ -72,6 +72,23 @@ HTML5 Publishers
 * IndieGameStand
 * HumbleBundle
 * Amazon Indie Games Store
+* ShockWave
+* PopCap
+* Itch.io
+* Impulse
+* GameFly
+* GetGames 
+* Beamdog
+* GameTap
+* GamesPlanet
+* DotEmu
+* Mac Game Store
+* Game Tree Mac
+* Show Me The Games
+* Playism
+* Gameolith
+* Indiepub
+* Kawagagames
 
 # Ad Networks
 
