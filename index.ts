@@ -2,10 +2,10 @@
 /* MAJOR TODOs
  * Dynamic display - DONE
  * Jumps
- * Game Over screen [image, score, restart]
- * Intro
+ * Game Over screen [image, score, restart] - DONE
+ * Intro - DONE
  * SFX - (SONA?)
- * HUD
+ * HUD - DONE
  * For 2.0 - Multiplayer...
  * Adjust Difficult
  * Change sprites
@@ -29,8 +29,16 @@ var state={
 	elevator: false,
 	jumpingUp: false,
 	jumpingDown: false,
-	jumpFloor: 0
+	jumpFloor: 0,
+	waiting: false
 };
+
+var sfx={
+	door: new Audio,
+};
+
+sfx.door.src="img/door-01.ogg";
+
 
 var score=0;
 
@@ -92,7 +100,7 @@ gamejs.ready(function(){
 			
 			if(!state.started)
 				state.started=true;
-			if(state.gameOver)
+			if(state.gameOver && !state.waiting)
 				window.location.reload();
 		}
 		if(event.type===gamejs.event.KEY_UP)
@@ -146,6 +154,7 @@ gamejs.ready(function(){
 					{
 						if(utils.checkCollision(mastin,door))
 						{
+							sfx.door.play();
 							remaining--;
 							door.fill("cyan");
 							door.type = "OldPointDoor";
@@ -269,6 +278,10 @@ gamejs.ready(function(){
 						console.log("Game Over");
 						state.moveEnabled=false;
 						state.gameOver=true;
+						state.waiting=true;
+						setTimeout(function(){
+							state.waiting=false;
+						},1000);
 					}
 				});
 				//ELEVATOR
@@ -280,21 +293,6 @@ gamejs.ready(function(){
 				}
 			//AUDIO
 		}
-		//SCROLLING
-		/*if(mastin.position.y>450-1)
-		{
-			for(var i=0;i<building.length;i++)
-				building[i].position.move(0,480);
-			mastin.position.y=0;
-			elevator.position.y=0;
-		}
-		if(mastin.position.y<0)
-		{
-			for(var i=0;i<building.length;i++)
-				building[i].position.move(0,-480);
-			mastin.position.y=0;
-			elevator.position.y;
-		}*/
 		//RENDER
 		if(state.gameOver)
 		{
