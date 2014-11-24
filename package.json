@@ -1,10 +1,10 @@
 {
-  "name": "generator-adrianarroyo-gamejam",
+  "name": "torre-utopia",
   "version": "0.1.0",
-  "description": "My personal generator for my TypeScript games",
+  "description": "Attack the tower",
   "homepage": "http://adrianarroyocalle.github.io",
   "bugs": {
-    "url": "http://github.com/AdrianArroyoCalle/skeleton-npm-game",
+    "url": "http://github.com/AdrianArroyoCalle/torre-utopia",
     "email": "adrian.arroyocalle@gmail.com"
   },
   "license": "MIT",
@@ -25,14 +25,10 @@
     "typescript"
   ],
   "dependencies": {
-    "yeoman-generator": "~0.17.6",
-    "babylonjs": "~1.13.3",
     "gamejs": "~2.0.2",
     "box2d.js": "~1.0.0",
-    "three": "~0.68.0",
     "mespeak": "~1.9.6",
     "bongo.js": "~1.1.2",
-    "cannon": "~0.6.0",
     "hammerjs": "~2.0.4",
     "i18next-client": "~1.7.4",
     "canvace": "~0.9.16"

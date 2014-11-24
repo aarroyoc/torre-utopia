@@ -46,6 +46,7 @@ module.exports=function(grunt){
 					{expand: true, cwd: "build/css", src: "*.css", dest: "build/dist/css/"},
 					{expand: true, cwd: "build/fonts", src: "*", dest: "build/dist/fonts"},
 					{expand: true, cwd: "build/html", src: "*.html", dest: "build/dist/"},
+					{expand: true, cwd: "img", src: "*", dest: "build/dist/img/"},
 					{expand: false, src: "conf/node-webkit.json", dest: "build/dist/package.json"},
 					{expand: false, src: "conf/chrome-manifest.json", dest: "build/dist/manifest.json"},
 					{expand: false, src: "conf/chrome-background.js", dest: "build/dist/background.js"},
@@ -262,7 +263,7 @@ module.exports=function(grunt){
 	grunt.loadNpmTasks("grunt-contrib-compress");
 	grunt.loadNpmTasks("grunt-typedoc");
 	
-	grunt.registerTask("default",["clean","tsd",/*"local-googlefont:Ubuntu",*/"typescript","browserify","jade","less","copy"]);
+	grunt.registerTask("default",["clean",/*"tsd",*//*"local-googlefont:Ubuntu",*/"typescript","browserify","jade","less","copy"]);
 	grunt.registerTask("serve",["default","connect:server:keepalive"]);
 	grunt.registerTask("docs",["typedoc","markedman"]);
 	grunt.registerTask("publish",["default","favicons","htmlmin","imagemin","cssmin","release-it","gh-pages"]);
