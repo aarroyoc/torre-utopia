@@ -1,10 +1,10 @@
 ///<reference path="typings/node/node.d.ts"/>
 /* MAJOR TODOs
  * Dynamic display - DONE
- * Jumps
+ * Jumps - DONE 
  * Game Over screen [image, score, restart] - DONE
  * Intro - DONE
- * SFX - (SONA?)
+ * SFX - DONE
  * HUD - DONE
  * For 2.0 - Multiplayer...
  * Adjust Difficult
@@ -34,11 +34,15 @@ var state={
 };
 
 var sfx={
-	door: new Audio,
+	door: new Audio("img/door-01.ogg"),
+	elevator: new Audio("img/elevator.ogg")
 };
-
-sfx.door.src="img/door-01.ogg";
-
+var music=new Audio("img/RagtimeDance.ogg");
+music.addEventListener("ended",function(){
+	music.currentTime=0;
+	music.play();
+});
+music.play();
 
 var score=0;
 
@@ -170,14 +174,14 @@ gamejs.ready(function(){
 							building.push(points);
 						}
 					}
-					elevation=machines.elevator(mastin,door,elevator,state,-1,elevation);
+					elevation=machines.elevator(mastin,door,elevator,state,-1,elevation,sfx);
 				}
 			}
 			if(mastin.move.down && state.moveEnabled)
 			{
 				for(var index=0;index<building.length;index++){
 					var door=building[index];
-					elevation=machines.elevator(mastin,door,elevator,state,1,elevation);
+					elevation=machines.elevator(mastin,door,elevator,state,1,elevation,sfx);
 				}
 			}
 			//GENERATE 'MALOS'

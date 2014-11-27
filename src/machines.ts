@@ -1,6 +1,6 @@
 import utils=require("./utils");
 
-export function elevator(mastin: any, door: any,elevator: any, state: any, factor: number, elevation: any){
+export function elevator(mastin: any, door: any,elevator: any, state: any, factor: number, elevation: any, sfx: any){
 	if(door.type !=undefined && door.type == "Elevator")
 	{
 		if(utils.checkCollision(mastin,door))
@@ -16,6 +16,7 @@ export function elevator(mastin: any, door: any,elevator: any, state: any, facto
 					return false;
 				}};
 			}
+			sfx.elevator.play();
 			return {render: function(ms){
 				elevator.position.y+=0.1*factor*ms;
 				mastin.position.y+=0.1*factor*ms;
