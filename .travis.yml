@@ -4,6 +4,9 @@ os:
  - osx
 before_install:
  - npm install -g grunt-cli
+install:
+ - npm install
+ - grunt tsd
 node_js: 
  - "0.11"
  - "0.10"
