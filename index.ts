@@ -10,6 +10,7 @@
  * Adjust Difficult
  * Change sprites
  * Animations
+ * Touch Input 
  */
 import utils=require("./src/utils");
 import generation=require("./src/generation");
@@ -51,6 +52,10 @@ var remaining=0;
 gamejs.preload(["img/SKY.JPG","img/Elevator.png","img/Door.png","img/PointDoor.png","img/Mastin.png","img/Malo.png","img/TorreUtopia.png"]);
 
 gamejs.ready(function(){
+	window.addEventListener("contextmenu",function(e){
+		e.stopPropagation();
+		e.preventDefault();
+	});
 	gamejs.display.setCaption("Torre Utopia");
 	var display=gamejs.display.setMode([640,480]);
 	
@@ -120,6 +125,35 @@ gamejs.ready(function(){
 			if(event.key===gamejs.event.K_SPACE)
 				mastin.move.jump=false;
 			mastin.move.animation=false;
+		}
+		if(event.type===gamejs.event.TOUCH_DOWN)
+		{
+			var x=event.touches[0].pos[0];
+			var y=event.touches[0].pos[1];
+			
+			if(x<window.innerWidth/2)
+				mastin.move.left=true;
+			if(x>window.innerWidth/2)
+				mastin.move.right=true;
+			if(y<window.innerHeight/4)
+				mastin.move.up=true;
+			if(y>(window.innerHeight*3/4))
+				mastin.move.down=true;
+			
+			if(!state.started)
+				state.started=true;
+			if(state.gameOver && !state.waiting)
+				window.location.reload();
+		}
+		if(event.type===gamejs.event.TOUCH_UP)
+		{
+			var x=event.touches[0].pos[0];
+			var y=event.touches[0].pos[1];
+		
+			mastin.move.left=false;
+			mastin.move.right=false;
+			mastin.move.up=false;
+			mastin.move.down=false;
 		}
 	});
 	
