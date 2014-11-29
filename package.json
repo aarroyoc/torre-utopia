@@ -1,0 +1,45 @@
+{
+  "main": "index.html",
+  "name": "torre-utopia",
+  "description": "Torre Utopía",
+  "version": "0.1.0",
+  "nodejs" : false,
+  "keywords": [ "game", "node-webkit" ],
+  "window": {
+    "title": "Torre Utopia",
+    "icon" : "logo.svg",
+    "toolbar": true,
+    "frame": false,
+    "width": 800,
+    "height": 500,
+    "position": "center",
+    "as_desktop" : false,
+    "resizable" : true,
+    "always-on-top" : false,
+    "fullscreen" : true,
+    "kiosk" : false,
+    "min_width": 400,
+    "min_height": 200,
+    "max_width": 800,
+    "max_height": 600
+  },
+  "webkit": {
+    "plugin": false,
+    "java" : false,
+    "page-cache" : false
+  },
+  "maintainers" : [{
+	"name": "Adrián Arroyo Calle",
+	"email": "adrian.arroyocalle@gmail.com",
+	"web": "http://adrianarroyocalle.github.io"
+  }],
+  "bugs" : "http://github.com/AdrianArroyoCalle/torre-utopia",
+  "licenses" : [{
+	"type": "GPLv2",
+	"url": "http://www.gnu.org/licenses/gpl-2.0.html"
+  }],
+  "repositories" : [{
+	"type": "git",
+	"url": "git://github.com/AdrianArroyoCalle/torre-utopia"
+  }]
+}
