@@ -8,9 +8,12 @@
  * HUD - DONE
  * For 2.0 - Multiplayer...
  * Adjust Difficult
- * Change sprites
+ * Change sprites (offices)
  * Animations
- * Touch Input 
+ * Touch Input - DONE
+ * List of Social promotion (Google+, Google+ Pages, Google+ Comu, WhatsApp, LINE, Telegram, Divel Newsletter)
+ * Post-Mortem (Blog)
+ * Publish is a feature
  */
 import utils=require("./src/utils");
 import generation=require("./src/generation");

@@ -1,12 +1,12 @@
 {
   "main": "index.html",
-  "name": "skeleton-npm-game",
-  "description": "Skeleton NPM game",
+  "name": "torre-utopia",
+  "description": "Torre Utopía",
   "version": "0.1.0",
   "nodejs" : false,
-  "keywords": [ "demo", "node-webkit" ],
+  "keywords": [ "game", "node-webkit" ],
   "window": {
-    "title": "Skeleton NPM game",
+    "title": "Torre Utopia",
     "icon" : "logo.svg",
     "toolbar": true,
     "frame": false,
@@ -28,18 +28,18 @@
     "java" : false,
     "page-cache" : false
   },
-  maintainers: [{
-	name: "Adrián Arroyo Calle",
-	email: "adrian.arroyocalle@gmail.com",
-	web: "http://adrianarroyocalle.github.io"
+  "maintainers" : [{
+	"name": "Adrián Arroyo Calle",
+	"email": "adrian.arroyocalle@gmail.com",
+	"web": "http://adrianarroyocalle.github.io"
   }],
-  "bugs" : "http://github.com/AdrianArroyoCalle/skeleton-npm-game",
+  "bugs" : "http://github.com/AdrianArroyoCalle/torre-utopia",
   "licenses" : [{
-	type: "GPLv2",
-	url: "http://www.gnu.org/licenses/gpl-2.0.html"
+	"type": "GPLv2",
+	"url": "http://www.gnu.org/licenses/gpl-2.0.html"
   }],
   "repositories" : [{
-	type: "git",
-	url: "git://github.com/AdrianArroyoCalle/skeleton-npm-game"
+	"type": "git",
+	"url": "git://github.com/AdrianArroyoCalle/torre-utopia"
   }]
 }
