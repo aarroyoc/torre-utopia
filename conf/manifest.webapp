@@ -1,6 +1,6 @@
 {
-	"name" : "Skeleton NPM game",
-	"description" : "WebApp Manifest for Firefox OS",
+	"name" : "Torre Utopía",
+	"description" : "Open the doors but be careful with the policemen",
 	"launch_path" : "/index.html",
 	"icons" : {
 		"128" : "/icons/firefox-icon-128x128.png",
@@ -19,10 +19,10 @@
 	},
 	"default_locale" : "en",
 	"type" : "web",
-	"fullscreen" : true,
+	"fullscreen" : "true",
 	"locales" : {
 		"es" : {
-			"description" : "Manifiesto WebApp para Firefox OS"
+			"description" : "Abre las puertas pero ten cuidado con los militares"
 		}
 	},
 	"orientation" : ["landscape"],
