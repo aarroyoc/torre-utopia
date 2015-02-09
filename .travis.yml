@@ -8,7 +8,7 @@ install:
  - npm install
  - grunt tsd
 node_js: 
- - "0.11"
+ - "0.12"
  - "0.10"
  - "0.8"
 script: 
@@ -17,4 +17,3 @@ matrix:
  fast_finish: true
  allow_failures:
   - nodejs: "0.8"
-  - nodejs: "0.11"

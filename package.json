@@ -24,7 +24,7 @@
     "github",
     "typescript"
   ],
-  "dependencies": {
+  "optionalDependencies": {
     "gamejs": "~2.0.2",
     "box2d.js": "~1.0.0",
     "mespeak": "~1.9.6",
