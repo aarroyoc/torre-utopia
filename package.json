@@ -26,12 +26,6 @@
   ],
   "optionalDependencies": {
     "gamejs": "~2.0.2",
-    "box2d.js": "~1.0.0",
-    "mespeak": "~1.9.6",
-    "bongo.js": "~1.1.2",
-    "hammerjs": "~2.0.4",
-    "i18next-client": "~1.7.4",
-    "canvace": "~0.9.16",
     "sona": "~1.0.1"
   },
   "devDependencies": {
