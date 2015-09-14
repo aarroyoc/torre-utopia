@@ -1,19 +1,11 @@
-language: node_js
-os:
- - linux
- - osx
-before_install:
- - npm install -g grunt-cli
+sudo: required
+services:
+ - docker
+env:
+ - DOCKER_IMAGE="node:0.10"
+ - DOCKER_IMAGE="node:0.12"
+ - DOCKER_IMAGE="node:4.0.0"
 install:
- - npm install
- - grunt tsd
-node_js: 
- - "0.12"
- - "0.10"
- - "0.8"
-script: 
- - grunt test
-matrix:
- fast_finish: true
- allow_failures:
-  - nodejs: "0.8"
+ - docker pull $DOCKER_IMAGE
+script:
+ - docker run -v $PWD:/build -t $DOCKER_IMAGE /bin/bash -c "cd /build && npm install -g grunt-cli && npm install && grunt tsd && grunt test"
